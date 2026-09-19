@@ -19,17 +19,15 @@ body { font-family: var(--font-body); color: var(--charcoal); background: var(--
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
-/* ==================== LEFT NAV: CAMERA ICON ==================== */
+/* ==================== LEFT NAV ==================== */
 .side-nav {
     position: fixed; left: 30px; top: 50%; transform: translateY(-50%);
-    z-index: 1000; display: flex; flex-direction: column; align-items: center;
+    z-index: 1000; display: flex; flex-direction: column; align-items: center; gap: 20px;
 }
 .nav-camera-icon {
-    font-size: 1.8rem; color: var(--light-gray); transition: all 0.3s ease;
+    font-size: 1.8rem; color: var(--light-gray); transition: all 0.3s ease; cursor: pointer;
 }
-.nav-camera-icon:hover, .nav-camera-icon.active {
-    color: var(--sage); transform: scale(1.1);
-}
+.nav-camera-icon:hover, .nav-camera-icon.active { color: var(--sage); transform: scale(1.1); }
 
 /* ==================== TOP BAR ==================== */
 .top-bar {
@@ -42,90 +40,150 @@ a { text-decoration: none; color: inherit; }
 .top-bar-left .logo-text {
     font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; letter-spacing: 4px;
 }
+.top-bar-center { display: flex; gap: 30px; }
 .top-bar-center .nav-link {
     font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase;
     color: var(--charcoal); font-weight: 600; transition: color 0.3s; cursor: pointer;
 }
 .top-bar-center .nav-link:hover { color: var(--sage); }
 
-/* Language Switcher */
 .lang-switch { display: flex; align-items: center; gap: 10px; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
 .lang-opt { transition: color 0.3s; user-select: none; }
 .lang-opt.active { color: var(--sage); }
 .lang-opt:not(.active) { color: var(--warm-gray); }
 .separator { color: var(--light-gray); }
 
-/* ==================== COMMON STYLES ==================== */
-.section { min-height: 100vh; scroll-snap-align: start; padding: 120px 70px 80px 90px; display: flex; align-items: center; position: relative; }
-.section-container { width: 100%; max-width: 1400px; margin: 0 auto; }
-.section-heading { font-family: var(--font-heading); font-size: 3.5rem; font-weight: 700; line-height: 1.15; margin-bottom: 35px; color: var(--charcoal); }
-.section-subheading { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 15px; display: block; }
-
-/* ==================== HERO SECTION ==================== */
-.hero-section { position: relative; background: var(--charcoal); color: var(--white); padding: 0; overflow: hidden; }
+/* ==================== HERO SECTION WITH FILM STRIP BORDER ==================== */
+.hero-section { 
+    position: relative; background: var(--charcoal); color: var(--white); 
+    padding: 0; overflow: hidden; min-height: 100vh; display: flex; align-items: center;
+    scroll-snap-align: start;
+}
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,44,44,0.7) 0%, rgba(44,44,44,0.2) 100%); z-index: 1; }
-.hero-image { position: absolute; inset: 0; z-index: 0; }
-.hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6) contrast(1.1); }
-.hero-content { position: relative; z-index: 2; padding: 120px 80px; max-width: 750px; }
-.hero-title { font-family: var(--font-heading); font-size: 7rem; font-weight: 700; letter-spacing: 20px; line-height: 0.95; margin-bottom: 25px; text-transform: uppercase; }
-.hero-subtitle { font-size: 0.8rem; letter-spacing: 10px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 50px; }
-.hero-cta { display: inline-block; padding: 18px 40px; border: 1px solid rgba(255,255,255,0.4); color: var(--white); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; transition: all 0.4s ease; }
-.hero-cta:hover { background: var(--sage); border-color: var(--sage); }
 
-/* ==================== FLEUR FANEE SECTION ==================== */
-.fleur-section {
-    background-color: var(--white); padding: 100px 5%; overflow: hidden;
-    position: relative; min-height: 100vh; /* FIXED: Ensures visibility */
-    display: flex; align-items: center;
-    scroll-snap-align: start; 
+/* Creative Film Strip Border Container */
+.film-frame-container {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px;
 }
-.fleur-container { display: flex; width: 100%; max-width: 1400px; margin: 0 auto; align-items: center; justify-content: space-between; }
-.fleur-content { width: 40%; z-index: 10; padding-right: 50px; }
-.fleur-subtitle { font-size: 0.75rem; letter-spacing: 4px; color: var(--warm-gray); text-transform: uppercase; display: block; margin-bottom: 15px; }
-.fleur-title { font-family: var(--font-heading); font-size: 5rem; line-height: 1; color: var(--charcoal); margin-bottom: 25px; font-weight: 400; letter-spacing: -1px; }
-.fleur-divider { width: 60px; height: 1px; background: var(--charcoal); margin-bottom: 30px; position: relative; }
-.fleur-divider::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(45deg); width: 6px; height: 6px; background: #fff; border: 1px solid var(--charcoal); }
-.fleur-desc { font-size: 1rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 40px; max-width: 400px; font-weight: 300; }
+.film-frame-inner {
+    position: relative; width: 100%; height: 100%;
+    background: #111; padding: 15px; /* The black film strip area */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+/* Sprocket holes effect using gradients */
+.film-frame-inner::before, .film-frame-inner::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 30px;
+    background-image: radial-gradient(circle, #fff 6px, transparent 7px);
+    background-size: 30px 40px; background-position: center;
+    z-index: 3;
+}
+.film-frame-inner::before { left: 0; }
+.film-frame-inner::after { right: 0; }
 
-.fleur-visuals { width: 55%; height: 600px; position: relative; perspective: 1000px; overflow: hidden; mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent); }
-.film-strip { position: absolute; top: 0; left: 50%; width: 300px; height: 200%; transform-style: preserve-3d; animation: rollPhotos 20s linear infinite; }
-.photo-card { width: 100%; height: 350px; margin-bottom: 30px; position: absolute; backface-visibility: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.photo-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.5s ease; }
-.photo-card img:hover { filter: grayscale(0%); }
-.photo-card:nth-child(1) { transform: rotateX(0deg) translateZ(280px); }
-.photo-card:nth-child(2) { transform: rotateX(60deg) translateZ(280px); }
-.photo-card:nth-child(3) { transform: rotateX(120deg) translateZ(280px); }
-.photo-card:nth-child(4) { transform: rotateX(180deg) translateZ(280px); }
-.photo-card:nth-child(5) { transform: rotateX(240deg) translateZ(280px); }
-.photo-card:nth-child(6) { transform: rotateX(300deg) translateZ(280px); }
-@keyframes rollPhotos { 0% { transform: translateY(-50%) rotateX(0deg); } 100% { transform: translateY(-50%) rotateX(-360deg); } }
+.hero-image-wrapper {
+    position: relative; width: 100%; height: 100%; overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+.hero-image-wrapper img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    filter: brightness(0.7) contrast(1.1) sepia(0.2); 
+}
 
-/* ==================== SERVICES / PRICE LIST SECTION ==================== */
-.services-section { background: var(--white); display: block; padding-top: 150px; }
-.services-header { text-align: center; margin-bottom: 60px; }
-.price-list-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 0 auto; }
+.hero-content { 
+    position: absolute; z-index: 10; bottom: 15%; left: 8%; 
+    max-width: 700px; text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+/* Name removed from hero title as requested */
+.hero-subtitle { 
+    font-size: 0.9rem; letter-spacing: 8px; text-transform: uppercase; 
+    color: rgba(255,255,255,0.8); margin-bottom: 40px; 
+}
+.hero-cta { 
+    display: inline-block; padding: 18px 45px; 
+    background: rgba(255,255,255,0.1); backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.5); color: var(--white); 
+    font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; 
+    transition: all 0.4s ease; cursor: pointer;
+}
+.hero-cta:hover { background: var(--sage); border-color: var(--sage); transform: translateY(-2px); }
 
+/* ==================== PORTFOLIO SECTION ==================== */
+.portfolio-section {
+    background-color: var(--white); padding: 120px 5%; 
+    min-height: 100vh; scroll-snap-align: start;
+}
+.portfolio-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px; max-width: 1400px; margin: 60px auto 0;
+}
+.portfolio-item {
+    aspect-ratio: 3/4; overflow: hidden; position: relative; cursor: pointer;
+}
+.portfolio-item img {
+    width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;
+}
+.portfolio-item:hover img { transform: scale(1.05); }
+
+/* ==================== ABOUT ME SECTION ==================== */
+.about-section {
+    background: var(--cream); padding: 120px 5%; min-height: 100vh;
+    display: flex; align-items: center; scroll-snap-align: start;
+}
+.about-container {
+    display: flex; width: 100%; max-width: 1200px; margin: 0 auto;
+    align-items: center; gap: 80px;
+}
+.about-text { flex: 1; }
+.about-image-col { flex: 1; position: relative; }
+.about-pc-img {
+    width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    filter: grayscale(100%); transition: filter 0.5s;
+}
+.about-pc-img:hover { filter: grayscale(0%); }
+
+.section-heading { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 30px; }
+.section-subheading { 
+    font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; 
+    color: var(--sage); font-weight: 600; margin-bottom: 15px; display: block; 
+}
+.about-desc { font-size: 1.1rem; color: var(--warm-gray); line-height: 1.8; margin-bottom: 30px; }
+
+/* ==================== SERVICES / PRICE LIST ==================== */
+.services-section { background: var(--white); padding: 120px 5%; scroll-snap-align: start; }
+.price-list-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; max-width: 1200px; margin: 60px auto 0; }
 .price-category { background: var(--cream); padding: 40px; border-radius: 4px; border: 1px solid var(--cream-dark); }
-.category-title { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px; text-align: center; color: var(--charcoal); border-bottom: 1px solid var(--light-gray); padding-bottom: 15px; }
-
+.category-title { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px; text-align: center; border-bottom: 1px solid var(--light-gray); padding-bottom: 15px; }
 .price-item { margin-bottom: 30px; }
-.price-item:last-child { margin-bottom: 0; }
 .price-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
-.price-head h4 { font-size: 1.1rem; font-weight: 600; color: var(--charcoal); }
+.price-head h4 { font-size: 1.1rem; font-weight: 600; }
 .price-tag { font-family: var(--font-heading); font-size: 1.2rem; color: var(--sage); font-weight: 700; }
-
-.price-details { list-style: none; padding-left: 0; }
-.price-details li { font-size: 0.9rem; color: var(--warm-gray); margin-bottom: 8px; padding-left: 15px; position: relative; line-height: 1.5; }
+.price-details { list-style: none; }
+.price-details li { font-size: 0.9rem; color: var(--warm-gray); margin-bottom: 8px; padding-left: 15px; position: relative; }
 .price-details li::before { content: '•'; color: var(--sage); position: absolute; left: 0; }
-.extra-note { font-style: italic; color: var(--charcoal) !important; font-weight: 500; margin-top: 10px; }
 
-/* ==================== FLOATING CONTACT CARD ==================== */
-.floating-contact-card {
-    position: fixed; bottom: 30px; right: 30px; width: 280px;
-    background: var(--white); padding: 30px; border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1); z-index: 1000;
-    text-align: center; border: 1px solid var(--cream-dark);
+/* ==================== CHAT ICON TOGGLE ==================== */
+.chat-toggle-btn {
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    background: var(--charcoal); color: var(--white); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; cursor: pointer; z-index: 1001;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: all 0.3s ease;
+    border: none; outline: none;
 }
+.chat-toggle-btn:hover { transform: scale(1.1); background: var(--sage); }
+
+.floating-contact-card {
+    position: fixed; bottom: 100px; right: 30px; width: 280px;
+    background: var(--white); padding: 30px; border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); z-index: 1000;
+    text-align: center; border: 1px solid var(--cream-dark);
+    opacity: 0; visibility: hidden; transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.floating-contact-card.open { opacity: 1; visibility: visible; transform: translateY(0); }
+
 .contact-avatar {
     width: 60px; height: 60px; background: var(--cream-dark); color: var(--charcoal);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
@@ -134,7 +192,6 @@ a { text-decoration: none; color: inherit; }
 .contact-name { font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 5px; }
 .contact-role { font-size: 0.8rem; color: var(--warm-gray); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
 .contact-phone { display: block; font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; color: var(--charcoal); }
-
 .contact-buttons { display: flex; flex-direction: column; gap: 10px; }
 .btn-contact {
     display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -146,35 +203,14 @@ a { text-decoration: none; color: inherit; }
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-    .section { padding: 90px 35px 50px 70px; }
-    .hero-title { font-size: 4.5rem; letter-spacing: 12px; }
-    .section-heading { font-size: 2.8rem; }
-    
-    /* FIXED FLEUR VISIBILITY ON TABLET/MOBILE */
-    .fleur-section { min-height: 100vh; padding: 80px 20px; }
-    .fleur-container { flex-direction: column; text-align: center; }
-    .fleur-content { width: 100%; padding-right: 0; margin-bottom: 50px; }
-    .fleur-divider { margin: 0 auto 30px auto; }
-    .fleur-desc { margin: 0 auto 40px auto; }
-    .fleur-visuals { width: 100%; height: 400px; }
-    .photo-card { height: 250px; }
-    .photo-card:nth-child(1) { transform: rotateX(0deg) translateZ(200px); }
-    .photo-card:nth-child(2) { transform: rotateX(60deg) translateZ(200px); }
-    .photo-card:nth-child(3) { transform: rotateX(120deg) translateZ(200px); }
-    .photo-card:nth-child(4) { transform: rotateX(180deg) translateZ(200px); }
-    .photo-card:nth-child(5) { transform: rotateX(240deg) translateZ(200px); }
-    .photo-card:nth-child(6) { transform: rotateX(300deg) translateZ(200px); }
-    
+    .about-container { flex-direction: column; text-align: center; gap: 40px; }
     .price-list-grid { grid-template-columns: 1fr; max-width: 500px; }
-    .floating-contact-card { width: 240px; padding: 20px; bottom: 20px; right: 20px; }
+    .film-frame-container { padding: 20px; }
 }
-
 @media (max-width: 768px) {
     .side-nav { display: none; }
-    .section { padding: 90px 25px 50px 25px; }
-    .top-bar { padding: 12px 25px; }
-    .hero-title { font-size: 3.2rem; letter-spacing: 8px; }
-    .hero-content { padding: 90px 35px; }
+    .top-bar { padding: 15px 20px; }
+    .hero-content { left: 5%; bottom: 10%; }
     .section-heading { font-size: 2.2rem; }
-    .floating-contact-card { position: static; width: 100%; margin: 40px auto 0 auto; border-radius: 8px; }
+    .floating-contact-card { width: calc(100% - 60px); right: 30px; }
 }
