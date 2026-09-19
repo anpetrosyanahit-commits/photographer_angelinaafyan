@@ -45,62 +45,50 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ==================== PORTFOLIO SPOTLIGHT INTERACTION ====================
-const thumbs = document.querySelectorAll('.thumb-item');
-const spotlightImg = document.getElementById('spotlightImg');
-const spotlightTitle = document.getElementById('spotlightTitle');
-const spotlightMeta = document.getElementById('spotlightMeta');
-const spotlightFrame = document.getElementById('spotlightFrame');
+// ==================== PORTFOLIO STRIP NAVIGATION ====================
+const stripImages = [
+    { src: "https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80", info: "Wedding Collection • f/2.8" },
+    { src: "https://images.unsplash.com/photo-1511285560982-1351cdeb9821?w=1200&q=80", info: "Golden Hour • f/1.8" },
+    { src: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&q=80", info: "Portrait Session • f/4.0" },
+    { src: "https://images.unsplash.com/photo-1520854221256-17451cc330e7?w=1200&q=80", info: "Love Story • f/2.0" },
+    { src: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80", info: "Editorial • f/5.6" }
+];
+
+let currentIndex = 0;
+const stripImg = document.getElementById('stripImg');
+const stripInfo = document.getElementById('stripInfo');
 const heroFrame = document.getElementById('heroFrame');
 
-thumbs.forEach(thumb => {
-    thumb.addEventListener('click', () => {
-        // Remove active from all
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
+function updateStrip(direction) {
+    // Animate Hero Frame Sprockets too for consistency
+    if(heroFrame) {
+        heroFrame.classList.add('advance');
+        setTimeout(() => heroFrame.classList.remove('advance'), 400);
+    }
 
-        // Trigger sprocket animation
-        spotlightFrame.classList.add('advance');
-        if (heroFrame) heroFrame.classList.add('advance');
-        
-        setTimeout(() => {
-            spotlightFrame.classList.remove('advance');
-            if (heroFrame) heroFrame.classList.remove('advance');
-        }, 400);
-
-        // Fade out current image
-        spotlightImg.style.opacity = '0';
-        spotlightImg.classList.remove('loaded');
-
-        // Swap content after fade
-        setTimeout(() => {
-            spotlightImg.src = thumb.dataset.src;
-            spotlightTitle.textContent = thumb.dataset.title;
-            spotlightMeta.textContent = thumb.dataset.meta;
-            
-            // Fade in new image
-            spotlightImg.onload = () => {
-                spotlightImg.style.opacity = '1';
-                setTimeout(() => spotlightImg.classList.add('loaded'), 50);
-            };
-        }, 300);
-    });
-});
-
-// ==================== NAVIGATION ACTIVE STATE ====================
-const sections = document.querySelectorAll('section');
-const navIcon = document.querySelector('.nav-camera-icon');
-
-const observerOptions = { root: null, rootMargin: '-50% 0px', threshold: 0 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navIcon.classList.add('active');
+    // Fade out
+    stripImg.style.opacity = '0';
+    
+    setTimeout(() => {
+        if (direction === 'next') {
+            currentIndex = (currentIndex + 1) % stripImages.length;
+        } else {
+            currentIndex = (currentIndex - 1 + stripImages.length) % stripImages.length;
         }
-    });
-}, observerOptions);
+        
+        stripImg.src = stripImages[currentIndex].src;
+        stripInfo.textContent = stripImages[currentIndex].info;
+        
+        // Fade in
+        stripImg.onload = () => { stripImg.style.opacity = '1'; };
+    }, 300);
+}
 
-sections.forEach(section => observer.observe(section));
+document.getElementById('nextBtn').addEventListener('click', () => updateStrip('next'));
+document.getElementById('prevBtn').addEventListener('click', () => updateStrip('prev'));
+
+// Auto advance every 5 seconds
+setInterval(() => updateStrip('next'), 5000);
 
 // ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
