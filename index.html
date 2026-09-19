@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angelina Afyan — Photography Portfolio</title>
+    <title>Անգելինա Աֆյան | Photography Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Left Navigation: Camera Icon -->
+    <!-- Left Navigation -->
     <nav class="side-nav">
         <a href="#hero" class="nav-camera-icon active"><i class="fas fa-camera-retro"></i></a>
     </nav>
@@ -18,15 +18,15 @@
     <!-- Top Bar -->
     <header class="top-bar">
         <div class="top-bar-left">
-            <span class="logo-text">ANGELINA AFYAN</span>
+            <span class="logo-text" data-en="ANGELINA AFYAN" data-am="ԱՆԳԵԼԻՆԱ ԱՖՅԱՆ">ANGELINA AFYAN</span>
         </div>
         
-        <!-- Center: Only Services Link -->
         <div class="top-bar-center">
-            <a href="#services" class="nav-link" data-en="SERVICES" data-am="ԾԱՌԱՅՈՒԹՅՈՒՆՆՐ">SERVICES</a>
+            <a href="#portfolio" class="nav-link" data-en="PORTFOLIO" data-am="ՊՈՐՏՖՈԼԻՈ">PORTFOLIO</a>
+            <a href="#about" class="nav-link" data-en="ABOUT ME" data-am="ԻՄ ՄԱՍԻՆ">ABOUT ME</a>
+            <a href="#services" class="nav-link" data-en="SERVICES" data-am="ԱՌԱՅՈՒԹՅՈՒՆԵՐ">SERVICES</a>
         </div>
 
-        <!-- Right: Language Switcher -->
         <div class="top-bar-right">
             <div class="lang-switch">
                 <span class="lang-opt active" id="btn-en">EN</span>
@@ -36,142 +36,126 @@
         </div>
     </header>
 
-    <!-- ==================== HERO SECTION ==================== -->
-    <section id="hero" class="section hero-section">
+    <!-- ==================== HERO SECTION (FILM STRIP STYLE) ==================== -->
+    <section id="hero" class="hero-section">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">ANGELINA<br>AFYAN</h1>
-            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ԱՀԵՐ">CAPTURING SOULFUL MOMENTS</p>
-            <a href="#services" class="hero-cta" data-en="View Prices →" data-am="Տեսնել գները →">View Prices →</a>
+        
+        <!-- Creative Film Strip Border -->
+        <div class="film-frame-container">
+            <div class="film-frame-inner">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80" alt="Hero Portrait">
+                </div>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80" alt="Hero Portrait">
+
+        <div class="hero-content">
+            <!-- Name removed from hero as requested -->
+            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ՊԱՀՐ">CAPTURING SOULFUL MOMENTS</p>
+            <a href="#portfolio" class="hero-cta" data-en="Portfolio →" data-am="Պորտֆոլիո →">Portfolio →</a>
         </div>
     </section>
 
-    <!-- ==================== FLEUR FANEE ROLLING SECTION ==================== -->
-    <section id="fleur" class="fleur-section">
-        <div class="fleur-container">
-            <div class="fleur-content">
-                <span class="fleur-subtitle" data-en="EST. 2024" data-am="Հիմնադրված 2024">EST. 2024</span>
-                <h2 class="fleur-title">Fleur<br>Fanée</h2>
-                <div class="fleur-divider"></div>
-                <p class="fleur-desc" 
-                   data-en="Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever." 
-                   data-am="ահի անցողիկ գեղեցկությունը։ Ինչպես առամած ծաղիկը, այնպես էլ անհետացող պահերն ունեն րենց յուրահատուկ էլեգանտությունը։">
-                   Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever.
+    <!-- ==================== PORTFOLIO SECTION ==================== -->
+    <section id="portfolio" class="portfolio-section">
+        <div style="text-align: center;">
+            <span class="section-subheading" data-en="SELECTED WORKS" data-am="ԸՆՏՐՎԱԾ ԱՇԽԱՏԱՆՔՆԵՐ">SELECTED WORKS</span>
+            <h2 class="section-heading" data-en="Portfolio" data-am="Պորտֆոլիո">Portfolio</h2>
+        </div>
+        
+        <div class="portfolio-grid">
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?w=600&q=80" alt="Couple"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&q=80" alt="Portrait"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc330e7?w=600&q=80" alt="Love Story"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Fashion"></div>
+            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80" alt="Editorial"></div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <span class="section-subheading" data-en="THE PHOTOGRAPHER" data-am="ԼՈՒՍԱՆԿԱՐՉԸ">THE PHOTOGRAPHER</span>
+                <h2 class="section-heading" data-en="About Me" data-am="մ մասին">About Me</h2>
+                <p class="about-desc" 
+                   data-en="Hi, I'm Angelina. Based in Armenia, I specialize in capturing authentic emotions and timeless stories. My editing process combines technical precision with artistic intuition, ensuring every photo reflects the true essence of the moment."
+                   data-am="Բարև, ես Անգելինան եմ։ Հայաստանում ես մասնագիտացած եմ իրական էմոցիաների և անժամանակ պատմությունների նկարահանման մեջ։ Իմ խմբագրման գործընթացը համատեղում է տեխնիկական ճշգրտությունը գեղարվեստական ինտուիցիայի հետ։">
+                   Hi, I'm Angelina. Based in Armenia, I specialize in capturing authentic emotions and timeless stories. My editing process combines technical precision with artistic intuition, ensuring every photo reflects the true essence of the moment.
                 </p>
             </div>
+            <div class="about-image-col">
+                <!-- Replace with your actual PC/workspace image -->
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="My Workspace" class="about-pc-img">
+            </div>
+        </div>
+    </section>
 
-            <div class="fleur-visuals">
-                <div class="film-strip">
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Photo"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80" alt="Photo"></div>
-                    <!-- Duplicates for loop -->
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo"></div>
+    <!-- ==================== SERVICES / PRICING ==================== -->
+    <section id="services" class="services-section">
+        <div style="text-align: center;">
+            <span class="section-subheading" data-en="INVESTMENT" data-am="ՆԱՑՈՒՅՑ">INVESTMENT</span>
+            <h2 class="section-heading" data-en="Service & Pricing" data-am="Ծառայություններ և Գներ">Service & Pricing</h2>
+        </div>
+
+        <div class="price-list-grid">
+            <div class="price-category">
+                <h3 class="category-title" data-en="Wedding" data-am="Հարսանիք">Wedding</h3>
+                <div class="price-item">
+                    <div class="price-head"><h4 data-en="Package 1" data-am="Փաթեթ 1">Package 1</h4><span class="price-tag">70 000 AMD</span></div>
+                    <ul class="price-details">
+                        <li data-en="All day shooting (till 23:00)" data-am="Ամբողջ օրվա նկարահանում (մինչև 23:00)">All day shooting (till 23:00)</li>
+                        <li data-en="600-800 edited photos" data-am="600-800 մբագրված լուսանկար">600-800 edited photos</li>
+                    </ul>
+                </div>
+                <div class="price-item">
+                    <div class="price-head"><h4 data-en="Package 2" data-am="Փաթեթ 2">Package 2</h4><span class="price-tag">50 000 AMD</span></div>
+                    <ul class="price-details">
+                        <li data-en="Morning, ceremony & shoot (till 18:00)" data-am="Առավոտ, արարողություն և ֆոտոշարք (մինչև 18:00)">Morning, ceremony & shoot (till 18:00)</li>
+                        <li data-en="300-400 edited photos" data-am="300-400 խմբագրված լուսանկար">300-400 edited photos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="price-category">
+                <h3 class="category-title" data-en="Love Story" data-am="Սիրո Պատմություն">Love Story</h3>
+                <div class="price-item">
+                    <div class="price-head"><h4 data-en="Couple Session" data-am="Զույգերի Ֆոտոշարք">Couple Session</h4><span class="price-tag">25 000 AMD</span></div>
+                    <ul class="price-details">
+                        <li data-en="1 location, 1 hour duration" data-am="1 վայր, 1 ժամ տևողություն">1 location, 1 hour duration</li>
+                        <li data-en="Up to 80 edited photos" data-am="Մինչև 80 խմբագրված լուսանկար">Up to 80 edited photos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="price-category">
+                <h3 class="category-title" data-en="Personal" data-am="Անհատական">Personal</h3>
+                <div class="price-item">
+                    <div class="price-head"><h4 data-en="Solo Session" data-am="Անհատական ոտոշարք">Solo Session</h4><span class="price-tag">15 000 AMD</span></div>
+                    <ul class="price-details">
+                        <li data-en="1 location, 1 hour duration" data-am="1 վայր, 1 ժամ տևողություն">1 location, 1 hour duration</li>
+                        <li data-en="Up to 30 edited photos" data-am="Մինչև 30 խմբագրված ուսանկար">Up to 30 edited photos</li>
+                        <li data-en="Studio: +15 000 AMD" data-am="Ստուդիա՝ +15 000 AMD">Studio: +15 000 AMD</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SERVICES / PRICE LIST SECTION ==================== -->
-    <section id="services" class="section services-section">
-        <div class="section-container">
-            <div class="services-header">
-                <span class="section-subheading" data-en="INVESTMENT" data-am="ԳՆԱՑՈՒՅՑ">INVESTMENT</span>
-                <h2 class="section-heading" data-en="Service & Pricing" data-am="առայություններ և Գներ">Service & Pricing</h2>
-            </div>
+    <!-- ==================== CHAT ICON & CONTACT CARD ==================== -->
+    <button class="chat-toggle-btn" id="chatToggle" aria-label="Open Contact">
+        <i class="fas fa-comment-dots"></i>
+    </button>
 
-            <div class="price-list-grid">
-                
-                <!-- Wedding Column -->
-                <div class="price-category">
-                    <h3 class="category-title" data-en="Wedding" data-am="Հարսանիք">Wedding</h3>
-                    
-                    <div class="price-item">
-                        <div class="price-head">
-                            <h4 data-en="Package 1" data-am="Փաթեթ 1">Package 1</h4>
-                            <span class="price-tag">70 000 AMD</span>
-                        </div>
-                        <ul class="price-details">
-                            <li data-en="All day shooting (till 23:00)" data-am="Ամբողջ օրվա նկարահանում (մինչև 23:00)">All day shooting (till 23:00)</li>
-                            <li data-en="600-800 edited photos (color correction)" data-am="600-800 խմբագրված լուսանկար">600-800 edited photos (color correction)</li>
-                            <li data-en="20-30 edited photos that day" data-am="20-30 խմբագրված լուսանկար նույն օրը">20-30 edited photos that day</li>
-                        </ul>
-                    </div>
-
-                    <div class="price-item">
-                        <div class="price-head">
-                            <h4 data-en="Package 2" data-am="Փաթեթ 2">Package 2</h4>
-                            <span class="price-tag">50 000 AMD</span>
-                        </div>
-                        <ul class="price-details">
-                            <li data-en="Bride’s morning, ceremony & photoshoot (till 18:00)" data-am="Հարսնացուի առավոտ, արարողություն և ֆոտոշարք (մինչև 18:00)">Bride’s morning, ceremony & photoshoot (till 18:00)</li>
-                            <li data-en="300-400 edited photos" data-am="300-400 խմբագրված լուսանկար">300-400 edited photos</li>
-                        </ul>
-                    </div>
-
-                    <div class="price-item">
-                        <div class="price-head">
-                            <h4 data-en="Package 3" data-am="Փաթեթ 3">Package 3</h4>
-                            <span class="price-tag">30 000 AMD</span>
-                        </div>
-                        <ul class="price-details">
-                            <li data-en="Wedding ceremony and photoshoot" data-am="Հարսանեկան արարողություն և ֆոտոշարք">Wedding ceremony and photoshoot</li>
-                            <li data-en="150-200 edited photos" data-am="150-200 խմբագրված լուսանկար">150-200 edited photos</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Love Story Column -->
-                <div class="price-category">
-                    <h3 class="category-title" data-en="Love Story" data-am="Սիրո Պատմություն">Love Story</h3>
-                    <div class="price-item highlight-item">
-                        <div class="price-head">
-                            <h4 data-en="Couple Session" data-am="Զույգերի Ֆոտոշարք">Couple Session</h4>
-                            <span class="price-tag">25 000 AMD</span>
-                        </div>
-                        <ul class="price-details">
-                            <li data-en="Couple’s photoshoot in 1 location" data-am="Զույգերի ֆոտոշարք 1 վայրում">Couple’s photoshoot in 1 location</li>
-                            <li data-en="Duration — 1 hour" data-am="Տևողությունը՝ 1 ժամ">Duration — 1 hour</li>
-                            <li data-en="Up to 80 edited photos" data-am="Մինչև 80 խմբագրված լուսանկար">Up to 80 edited photos (color correction)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Personal Column -->
-                <div class="price-category">
-                    <h3 class="category-title" data-en="Personal" data-am="Անհատական">Personal</h3>
-                    <div class="price-item">
-                        <div class="price-head">
-                            <h4 data-en="Solo Session" data-am="Անհատական ոտոշարք">Solo Session</h4>
-                            <span class="price-tag">15 000 AMD</span>
-                        </div>
-                        <ul class="price-details">
-                            <li data-en="Photoshoot in 1 location" data-am="Ֆոտոշարք 1 վայրում">Photoshoot in 1 location</li>
-                            <li data-en="Duration — 1 hour" data-am="Տևողությունը՝ 1 ժամ">Duration — 1 hour</li>
-                            <li data-en="Up to 30 edited photos" data-am="Մինչև 30 խմբագրված լուսանկար">Up to 30 edited photos</li>
-                            <li class="extra-note" data-en="In photostudio: +15 000 AMD" data-am="Ֆոտոստուդիայում +15 000 AMD">In photostudio: +15 000 AMD</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FLOATING CONTACT CARD (Bottom Right) ==================== -->
-    <div class="floating-contact-card">
-        <div class="contact-avatar">A</div>
-        <h3 class="contact-name">Angelina Afyan</h3>
+    <div class="floating-contact-card" id="contactCard">
+        <div class="contact-avatar">Ա</div>
+        <h3 class="contact-name" data-en="Angelina Afyan" data-am="Անգելինա Աֆյան">Angelina Afyan</h3>
         <p class="contact-role" data-en="Photographer" data-am="Լուսանկարիչ">Photographer</p>
         <a href="tel:+37495515540" class="contact-phone">+374 95 51 55 40</a>
         
         <div class="contact-buttons">
-            <a href="https://instagram.com/angelinaafyan_photography?stkn=MTJuc3luN3JvenZ2YQ==" target="_blank" class="btn-contact insta">
+            <a href="https://instagram.com/angelinaafyan_photography" target="_blank" class="btn-contact insta">
                 <i class="fab fa-instagram"></i> Instagram
             </a>
             <a href="https://wa.me/37495515540" target="_blank" class="btn-contact whatsapp">
