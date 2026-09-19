@@ -3,342 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LENZ/2026 — Photography Portfolio</title>
+    <title>Angelina Afyan — Photography Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- Navigation Dots -->
     <nav class="side-nav">
-        <a href="#hero" class="nav-dot active" data-section="0"></a>
-        <a href="#welcome" class="nav-dot" data-section="1"></a>
-        <a href="#concept" class="nav-dot" data-section="2"></a>
-        <a href="#quality" class="nav-dot" data-section="3"></a>
-        <a href="#portfolio" class="nav-dot" data-section="4"></a>
-        <a href="#preferred" class="nav-dot" data-section="5"></a>
-        <a href="#contact" class="nav-dot" data-section="6"></a>
-        <a href="#thanks" class="nav-dot" data-section="7"></a>
-        <a href="#branding" class="nav-dot" data-section="8"></a>
-        <a href="#favorite" class="nav-dot" data-section="9"></a>
-        <a href="#service" class="nav-dot" data-section="10"></a>
-        <a href="#best-service" class="nav-dot" data-section="11"></a>
+        <a href="#hero" class="nav-dot active"></a>
+        <a href="#fleur" class="nav-dot"></a>
+        <a href="#about" class="nav-dot"></a>
+        <a href="#portfolio" class="nav-dot"></a>
+        <a href="#services" class="nav-dot"></a>
+        <a href="#contact" class="nav-dot"></a>
     </nav>
 
     <!-- Top Bar -->
     <header class="top-bar">
         <div class="top-bar-left">
-            <span class="logo-text">LENZ</span>
+            <span class="logo-text">ANGELINA AFYAN</span>
         </div>
         <div class="top-bar-center">
-            <span>PHOTOGRAPHY</span>
+            <span>PORTRAIT</span>
             <span class="separator">|</span>
-            <span>RESUME</span>
+            <span>FAMILY</span>
+            <span class="separator">|</span>
+            <span>LOVE STORY</span>
         </div>
         <div class="top-bar-right">
-            <span>2023</span>
+            <span>2024</span>
         </div>
     </header>
 
-    <!-- ==================== SECTION 1: HERO ==================== -->
+    <!-- ==================== HERO SECTION ==================== -->
     <section id="hero" class="section hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">LENZ/<br>2023</h1>
-            <p class="hero-subtitle">PHOTOGRAPHY PORTFOLIO</p>
-            <a href="#welcome" class="hero-cta">Explore Portfolio →</a>
+            <h1 class="hero-title">ANGELINA<br>AFYAN</h1>
+            <p class="hero-subtitle">CAPTURING SOULFUL MOMENTS</p>
+            <a href="#portfolio" class="hero-cta">View Portfolio →</a>
         </div>
         <div class="hero-image">
-            <!-- Replace with your photo -->
-            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80" alt="Hero Portrait">
+            <img src="images/hero-portrait.jpg" alt="Angelina Afyan Hero Portrait">
         </div>
     </section>
 
-    <!-- ==================== SECTION 2: WELCOME ==================== -->
-    <section id="welcome" class="section welcome-section">
+    <!-- ==================== FLEUR FANEE ROLLING SECTION ==================== -->
+    <section id="fleur" class="fleur-section">
+        <div class="fleur-container">
+            
+            <!-- Left Side: Text -->
+            <div class="fleur-content">
+                <span class="fleur-subtitle">EST. 2024</span>
+                <h2 class="fleur-title">Fleur<br>Fanée</h2>
+                <div class="fleur-divider"></div>
+                <p class="fleur-desc">
+                    Capturing the ephemeral beauty of the moment. 
+                    Like a wilted flower, there is a unique, melancholic elegance 
+                    in things that do not last forever.
+                </p>
+                <a href="#portfolio" class="fleur-btn">View Gallery</a>
+            </div>
+
+            <!-- Right Side: Rolling Photos -->
+            <div class="fleur-visuals">
+                <div class="film-strip">
+                    <div class="photo-card"><img src="images/hero-portrait.jpg" alt="Photo 1"></div>
+                    <div class="photo-card"><img src="images/about-angelina.jpg" alt="Photo 2"></div>
+                    <div class="photo-card"><img src="images/portrait-1.jpg" alt="Photo 3"></div>
+                    <div class="photo-card"><img src="images/family-1.jpg" alt="Photo 4"></div>
+                    <!-- Duplicate images to make the loop seamless -->
+                    <div class="photo-card"><img src="images/hero-portrait.jpg" alt="Photo 1"></div>
+                    <div class="photo-card"><img src="images/about-angelina.jpg" alt="Photo 2"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT / CONCEPT SECTION ==================== -->
+    <section id="about" class="section concept-section">
+        <div class="section-container split-layout reverse">
+            <div class="split-left">
+                <span class="section-subheading">MY PHILOSOPHY</span>
+                <h2 class="section-heading">Every Photo Tells<br>A Unique Story</h2>
+                <div class="concept-box">
+                    <h3>About My Approach</h3>
+                    <p>I believe photography is more than just clicking a shutter. It's about capturing the raw emotion, the fleeting glances, and the authentic connections that make every moment unforgettable. My style blends natural light with editorial elegance.</p>
+                    <span class="concept-date">Based in Yerevan, Armenia</span>
+                </div>
+            </div>
+            <div class="split-right">
+                <img src="images/about-angelina.jpg" alt="Angelina Afyan Behind The Lens">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFOLIO GRID ==================== -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="section-container">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="section-subheading">SELECTED WORKS</span>
+                <h2 class="section-heading">Featured Collections</h2>
+            </div>
+            
+            <div class="portfolio-grid">
+                <img src="images/portrait-1.jpg" alt="Portrait Session">
+                <img src="images/family-1.jpg" alt="Family Session">
+                <img src="images/love-story-1.jpg" alt="Love Story Session">
+                <img src="images/newborn-1.jpg" alt="Newborn Session">
+                <img src="images/maternal-1.jpg" alt="Maternity Session">
+                <img src="images/lifestyle-1.jpg" alt="Lifestyle Session">
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#" class="btn-more">See All Projects →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section id="services" class="section service-section">
         <div class="section-container split-layout">
             <div class="split-left">
-                <div class="welcome-images">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Portrait 1" class="welcome-main-img">
-                    <div class="welcome-stats">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt="Small 1">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Small 2">
-                        <div class="stat-box">
-                            <span class="stat-number">240,000+</span>
-                            <span class="stat-label">Photos Taken</span>
+                <span class="section-subheading">WHAT I OFFER</span>
+                <h2 class="section-heading">My Services</h2>
+                <p class="section-text">From intimate family gatherings to romantic love stories, I provide tailored photography experiences that result in timeless heirlooms.</p>
+                
+                <div class="service-list-custom">
+                    <div class="service-item-row">
+                        <span class="service-num">01</span>
+                        <div>
+                            <h4>Portrait Sessions</h4>
+                            <p>Individual & Creative Portraits</p>
+                        </div>
+                    </div>
+                    <div class="service-item-row">
+                        <span class="service-num">02</span>
+                        <div>
+                            <h4>Family Stories</h4>
+                            <p>Candid Family & Lifestyle</p>
+                        </div>
+                    </div>
+                    <div class="service-item-row">
+                        <span class="service-num">03</span>
+                        <div>
+                            <h4>Love Stories</h4>
+                            <p>Engagement & Couple Sessions</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="split-right">
-                <h2 class="section-heading">Welcome To<br>Our Portfolio</h2>
-                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <p class="section-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 3: IDEA CONCEPT ==================== -->
-    <section id="concept" class="section concept-section">
-        <div class="section-container split-layout reverse">
-            <div class="split-left">
-                <h2 class="section-heading">What Is My<br>Idea Concept</h2>
-                <div class="concept-box">
-                    <h3>About Photography</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    <span class="concept-date">January 20th, 2023</span>
-                </div>
-            </div>
-            <div class="split-right">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=700&q=80" alt="Concept Portrait">
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 4: QUALITY HIGHLIGHT ==================== -->
-    <section id="quality" class="section quality-section">
-        <div class="section-container">
-            <div class="quality-photos">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt="Quality 1">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Quality 2">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="Quality 3">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&q=80" alt="Quality 4">
-            </div>
-            <div class="quality-content">
-                <h2 class="section-heading">The Quality<br>I Highlight</h2>
-                <div class="quality-grid">
-                    <div class="quality-item">
-                        <h4>Quality 01</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-                    </div>
-                    <div class="quality-item">
-                        <h4>Quality 02</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-                    </div>
+                <div class="service-images">
+                    <img src="images/service-main.jpg" alt="Photography Service Example">
+                    <img src="images/service-detail-1.jpg" alt="Detail Shot">
+                    <img src="images/service-detail-2.jpg" alt="Detail Shot">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== SECTION 5: AMAZING PORTFOLIO ==================== -->
-    <section id="portfolio" class="section portfolio-section">
-        <div class="section-container split-layout">
-            <div class="split-left">
-                <h2 class="section-heading">Amazing<br>Portfolio</h2>
-                <p class="portfolio-count">04/32</p>
-                <p class="portfolio-label">Anytime Now</p>
-                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-                <a href="#" class="btn-more">More Images →</a>
-            </div>
-            <div class="split-right">
-                <div class="portfolio-grid">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&q=80" alt="Portfolio 1">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&q=80" alt="Portfolio 2">
-                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="Portfolio 3">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt="Portfolio 4">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Portfolio 5">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Portfolio 6">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" alt="Portfolio 7">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&q=80" alt="Portfolio 8">
-                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=300&q=80" alt="Portfolio 9">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 6: PREFERRED PORTFOLIO ==================== -->
-    <section id="preferred" class="section preferred-section">
-        <div class="section-container split-layout reverse">
-            <div class="split-left">
-                <div class="preferred-images">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Preferred 1" class="preferred-main">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&q=80" alt="Preferred 2" class="preferred-small">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt="Preferred 3" class="preferred-small">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Preferred 4" class="preferred-small">
-                </div>
-            </div>
-            <div class="split-right">
-                <h2 class="section-heading">My Preferred<br>Portfolio</h2>
-                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ul class="preferred-list">
-                    <li><i class="fas fa-check"></i> Portfolio 01</li>
-                    <li><i class="fas fa-check"></i> Portfolio 02</li>
-                    <li><i class="fas fa-check"></i> Portfolio 03</li>
-                    <li><i class="fas fa-check"></i> Portfolio 04</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 7: CONTACT ==================== -->
+    <!-- ==================== CONTACT SECTION ==================== -->
     <section id="contact" class="section contact-section">
         <div class="section-container split-layout">
             <div class="split-left">
-                <h2 class="section-heading">My Contact</h2>
+                <span class="section-subheading">GET IN TOUCH</span>
+                <h2 class="section-heading">Let's Create<br>Magic Together</h2>
+                <p class="section-text">Ready to book your session or have questions? I'd love to hear from you. Fill out the form or reach out directly.</p>
+                
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h4>Website</h4>
-                        <p>www.yourwebsite.com</p>
-                    </div>
-                    <div class="contact-item">
                         <h4>Email</h4>
-                        <p>your@email.com</p>
+                        <p>hello@angelinaafyan.com</p>
                     </div>
                     <div class="contact-item">
-                        <h4>Telephone</h4>
-                        <p>+123 456 7890</p>
+                        <h4>Instagram</h4>
+                        <p>@angelina.afyan.photo</p>
                     </div>
                     <div class="contact-item">
-                        <h4>Address</h4>
-                        <p>123 Street, Number City 123</p>
+                        <h4>Location</h4>
+                        <p>Yerevan, Armenia</p>
                     </div>
                 </div>
             </div>
             <div class="split-right">
-                <div class="contact-images">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" alt="Contact 1">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&q=80" alt="Contact 2">
-                    <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&q=80" alt="Contact 3" class="contact-large">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 8: THANKS ==================== -->
-    <section id="thanks" class="section thanks-section">
-        <div class="section-container">
-            <div class="thanks-images">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Thanks 1">
-                <div class="thanks-quote">
-                    <span class="quote-mark">"</span>
-                    <p>Photography is the story I fail to put into words.</p>
-                    <span class="quote-mark">"</span>
-                </div>
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Thanks 2">
-            </div>
-            <div class="thanks-content">
-                <h2 class="section-heading">Thank's For<br>Watching</h2>
-                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                <p class="thanks-address">123 Street, Number City 123</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 9: FOCUS BRANDING ==================== -->
-    <section id="branding" class="section branding-section">
-        <div class="section-container split-layout">
-            <div class="split-left">
-                <h2 class="section-heading">My Focus<br>Branding</h2>
-                <div class="branding-list">
-                    <div class="branding-item">
-                        <span class="branding-num">01.</span>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit. Maecenas porttitor.</p>
-                    </div>
-                    <div class="branding-item">
-                        <span class="branding-num">02.</span>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit. Maecenas porttitor.</p>
-                    </div>
-                    <div class="branding-item">
-                        <span class="branding-num">03.</span>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit. Maecenas porttitor.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="split-right">
-                <div class="branding-images">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&q=80" alt="Branding 1">
-                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="Branding 2">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt="Branding 3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 10: MY FAVORITE ==================== -->
-    <section id="favorite" class="section favorite-section">
-        <h2 class="section-heading favorite-title">My Favorite</h2>
-        <div class="section-container">
-            <div class="favorite-grid">
-                <div class="favorite-item">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&q=80" alt="Favorite 1">
-                    <div class="favorite-info">
-                        <h4>My Favorite Photo 01</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
-                </div>
-                <div class="favorite-item">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&q=80" alt="Favorite 2">
-                    <div class="favorite-info">
-                        <h4>My Favorite Photo 02</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 11: OUR SERVICE ==================== -->
-    <section id="service" class="section service-section">
-        <div class="section-container split-layout">
-            <div class="split-left">
-                <h2 class="section-heading">Our Service</h2>
-                <p class="section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor.</p>
-                <div class="service-images">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="Service 1">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=300&q=80" alt="Service 2">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=300&q=80" alt="Service 3">
-                </div>
-            </div>
-            <div class="split-right">
-                <div class="service-cards">
-                    <div class="service-card dark">
-                        <i class="fas fa-camera"></i>
-                        <h4>Service 01</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
-                    </div>
-                    <div class="service-card dark">
-                        <i class="fas fa-video"></i>
-                        <h4>Service 02</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SECTION 12: BEST SERVICE ==================== -->
-    <section id="best-service" class="section best-service-section">
-        <div class="section-container">
-            <div class="best-service-photos">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt="Best 1">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt="Best 2">
-                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&q=80" alt="Best 3">
-                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=300&q=80" alt="Best 4">
-            </div>
-            <div class="best-service-content">
-                <h2 class="section-heading">Our Best<br>Service</h2>
-                <div class="best-service-grid">
-                    <div class="best-item">
-                        <i class="fas fa-gem"></i>
-                        <h4>Service 01</h4>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-                    </div>
-                    <div class="best-item">
-                        <i class="fas fa-file-alt"></i>
-                        <h4>Service 02</h4>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-                    </div>
-                    <div class="best-item">
-                        <i class="fas fa-cube"></i>
-                        <h4>Service 03</h4>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-                    </div>
-                    <div class="best-item">
-                        <i class="fas fa-chart-bar"></i>
-                        <h4>Service 04</h4>
-                        <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-                    </div>
+                <div class="form-mockup">
+                    <input type="text" placeholder="Your Name" disabled>
+                    <input type="email" placeholder="Your Email" disabled>
+                    <textarea placeholder="Tell me about your vision..." disabled></textarea>
+                    <button class="btn-more" disabled style="width: 100%; opacity: 0.6; cursor: not-allowed;">Send Message</button>
                 </div>
             </div>
         </div>
@@ -346,7 +202,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2023 LENZ Photography Portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Angelina Afyan Photography. All rights reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>
