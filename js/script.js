@@ -1,34 +1,50 @@
-// ==================== NAVIGATION DOTS ====================
-const sections = document.querySelectorAll('section');
-const navDots = document.querySelectorAll('.nav-dot');
+// ==================== LANGUAGE SWITCHER LOGIC ====================
+const langOptions = document.querySelectorAll('.lang-opt');
+const translatableElements = document.querySelectorAll('[data-en]');
 
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
-};
+let currentLang = 'en';
+
+langOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+        // Update active state
+        langOptions.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+
+        // Get selected language
+        const lang = opt.getAttribute('data-lang');
+        currentLang = lang;
+
+        // Update text content
+        translatableElements.forEach(el => {
+            if (el.hasAttribute(`data-${lang}`)) {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            }
+        });
+    });
+});
+
+// ==================== NAVIGATION CAMERA ICON ====================
+const sections = document.querySelectorAll('.section, .fleur-section');
+const navIcon = document.querySelector('.nav-camera-icon');
+
+const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navDots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('href') === `#${id}`) {
-                    dot.classList.add('active');
-                }
-            });
+            // Highlight camera icon when any section is visible
+            navIcon.classList.add('active');
         }
     });
 }, observerOptions);
 
 sections.forEach(section => observer.observe(section));
 
-// Smooth scroll on dot click
-navDots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
+// Smooth scroll for "Services" link
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = dot.getAttribute('href');
+        const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' });
