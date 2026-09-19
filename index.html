@@ -22,9 +22,9 @@
         </div>
         
         <div class="top-bar-center">
-            <a href="#portfolio" class="nav-link" data-en="PORTFOLIO" data-am="ՊՈՐՏՖՈԼԻՈ">PORTFOLIO</a>
-            <a href="#about" class="nav-link" data-en="ABOUT ME" data-am="ԻՄ ՄԱՍԻՆ">ABOUT ME</a>
-            <a href="#services" class="nav-link" data-en="SERVICES" data-am="ԱՌԱՅՈՒԹՅՈՒՆԵՐ">SERVICES</a>
+            <a href="#portfolio" class="nav-link" data-en="PORTFOLIO" data-am="ՊՈՐՖՈԼԻ">PORTFOLIO</a>
+            <a href="#about" class="nav-link" data-en="ABOUT ME" data-am="Ի ՄԱՍԻՆ">ABOUT ME</a>
+            <a href="#services" class="nav-link" data-en="SERVICES" data-am="ԾԱՌԱՅՒԹՅՈՆՆԵՐ">SERVICES</a>
         </div>
 
         <div class="top-bar-right">
@@ -36,40 +36,50 @@
         </div>
     </header>
 
-    <!-- ==================== HERO SECTION (FILM STRIP STYLE) ==================== -->
+    <!-- ==================== HERO SECTION (FULL WIDTH FILMSTRIP) ==================== -->
     <section id="hero" class="hero-section">
-        <div class="hero-overlay"></div>
-        
-        <!-- Creative Film Strip Border -->
-        <div class="film-frame-container">
-            <div class="film-frame-inner">
-                <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80" alt="Hero Portrait">
-                </div>
-            </div>
+        <!-- Full Width Filmstrip Header -->
+        <div class="filmstrip-header">
+            <div class="filmstrip-holes"></div>
         </div>
+        
+        <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80" alt="Hero Portrait">
+        </div>
+        <div class="hero-overlay"></div>
 
         <div class="hero-content">
-            <!-- Name removed from hero as requested -->
-            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ՊԱՀՐ">CAPTURING SOULFUL MOMENTS</p>
+            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀԳԵՎՈՐ ԱՀԵՐ">CAPTURING SOULFUL MOMENTS</p>
             <a href="#portfolio" class="hero-cta" data-en="Portfolio →" data-am="Պորտֆոլիո →">Portfolio →</a>
         </div>
     </section>
 
-    <!-- ==================== PORTFOLIO SECTION ==================== -->
+    <!-- ==================== PORTFOLIO SCROLLING TICKER ==================== -->
     <section id="portfolio" class="portfolio-section">
-        <div style="text-align: center;">
-            <span class="section-subheading" data-en="SELECTED WORKS" data-am="ԸՆՏՐՎԱԾ ԱՇԽԱՏԱՆՔՆԵՐ">SELECTED WORKS</span>
+        <div class="portfolio-header">
+            <span class="section-subheading" data-en="SELECTED WORKS" data-am="ՆՏՐՎԱԾ ԱՇԽԱՏԱՆՔՆԵՐ">SELECTED WORKS</span>
             <h2 class="section-heading" data-en="Portfolio" data-am="Պորտֆոլիո">Portfolio</h2>
         </div>
         
-        <div class="portfolio-grid">
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?w=600&q=80" alt="Couple"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&q=80" alt="Portrait"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc330e7?w=600&q=80" alt="Love Story"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Fashion"></div>
-            <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80" alt="Editorial"></div>
+        <!-- Infinite Scrolling Marquee -->
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <!-- SET 1 -->
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?w=600&q=80" alt="Couple"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&q=80" alt="Portrait"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc330e7?w=600&q=80" alt="Love Story"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Fashion"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80" alt="Editorial"></div>
+                
+                <!-- SET 2 (DUPLICATE FOR SEAMLESS LOOP) -->
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80" alt="Wedding"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?w=600&q=80" alt="Couple"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&q=80" alt="Portrait"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc330e7?w=600&q=80" alt="Love Story"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Fashion"></div>
+                <div class="marquee-item"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=80" alt="Editorial"></div>
+            </div>
         </div>
     </section>
 
@@ -77,16 +87,15 @@
     <section id="about" class="about-section">
         <div class="about-container">
             <div class="about-text">
-                <span class="section-subheading" data-en="THE PHOTOGRAPHER" data-am="ԼՈՒՍԱՆԿԱՐՉԸ">THE PHOTOGRAPHER</span>
-                <h2 class="section-heading" data-en="About Me" data-am="մ մասին">About Me</h2>
+                <span class="section-subheading" data-en="THE PHOTOGRAPHER" data-am="ԼՈՒՍԱՆԿԱՐԻՉԸ">THE PHOTOGRAPHER</span>
+                <h2 class="section-heading" data-en="About Me" data-am="Իմ մասին">About Me</h2>
                 <p class="about-desc" 
                    data-en="Hi, I'm Angelina. Based in Armenia, I specialize in capturing authentic emotions and timeless stories. My editing process combines technical precision with artistic intuition, ensuring every photo reflects the true essence of the moment."
-                   data-am="Բարև, ես Անգելինան եմ։ Հայաստանում ես մասնագիտացած եմ իրական էմոցիաների և անժամանակ պատմությունների նկարահանման մեջ։ Իմ խմբագրման գործընթացը համատեղում է տեխնիկական ճշգրտությունը գեղարվեստական ինտուիցիայի հետ։">
+                   data-am="Բարև, ես Անգելինան եմ։ Հայաստանում ես մասնագիտացած եմ իրական էմոցիաների և անժամանակ պատմությունների նկարահանման մեջ։ Իմ խմբագրման գործընթացը համատեղում է տեխնիկական ճշգրտությունը գեղարվեստական նտուիցիայի հետ։">
                    Hi, I'm Angelina. Based in Armenia, I specialize in capturing authentic emotions and timeless stories. My editing process combines technical precision with artistic intuition, ensuring every photo reflects the true essence of the moment.
                 </p>
             </div>
             <div class="about-image-col">
-                <!-- Replace with your actual PC/workspace image -->
                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80" alt="My Workspace" class="about-pc-img">
             </div>
         </div>
@@ -95,8 +104,12 @@
     <!-- ==================== SERVICES / PRICING ==================== -->
     <section id="services" class="services-section">
         <div style="text-align: center;">
-            <span class="section-subheading" data-en="INVESTMENT" data-am="ՆԱՑՈՒՅՑ">INVESTMENT</span>
-            <h2 class="section-heading" data-en="Service & Pricing" data-am="Ծառայություններ և Գներ">Service & Pricing</h2>
+            <!-- Camera Icon Added -->
+            <div class="services-title-wrap">
+                <i class="fas fa-camera"></i>
+                <h2 class="section-heading" data-en="Service & Pricing" data-am="առայություններ և Գներ" style="margin-bottom:0;">Service & Pricing</h2>
+            </div>
+            <!-- INVESTMENT REMOVED -->
         </div>
 
         <div class="price-list-grid">
@@ -106,7 +119,7 @@
                     <div class="price-head"><h4 data-en="Package 1" data-am="Փաթեթ 1">Package 1</h4><span class="price-tag">70 000 AMD</span></div>
                     <ul class="price-details">
                         <li data-en="All day shooting (till 23:00)" data-am="Ամբողջ օրվա նկարահանում (մինչև 23:00)">All day shooting (till 23:00)</li>
-                        <li data-en="600-800 edited photos" data-am="600-800 մբագրված լուսանկար">600-800 edited photos</li>
+                        <li data-en="600-800 edited photos" data-am="600-800 խմբագրված լուսանկար">600-800 edited photos</li>
                     </ul>
                 </div>
                 <div class="price-item">
