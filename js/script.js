@@ -1,27 +1,30 @@
 // ==================== LANGUAGE SWITCHER LOGIC ====================
-const langOptions = document.querySelectorAll('.lang-opt');
+const btnEn = document.getElementById('btn-en');
+const btnAm = document.getElementById('btn-am');
 const translatableElements = document.querySelectorAll('[data-en]');
 
-let currentLang = 'en';
+function setLanguage(lang) {
+    // Update button styles
+    if (lang === 'en') {
+        btnEn.classList.add('active');
+        btnAm.classList.remove('active');
+    } else {
+        btnAm.classList.add('active');
+        btnEn.classList.remove('active');
+    }
 
-langOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-        // Update active state
-        langOptions.forEach(o => o.classList.remove('active'));
-        opt.classList.add('active');
-
-        // Get selected language
-        const lang = opt.getAttribute('data-lang');
-        currentLang = lang;
-
-        // Update text content
-        translatableElements.forEach(el => {
-            if (el.hasAttribute(`data-${lang}`)) {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            }
-        });
+    // Update text content
+    translatableElements.forEach(el => {
+        const newText = el.getAttribute(`data-${lang}`);
+        if (newText) {
+            el.textContent = newText;
+        }
     });
-});
+}
+
+// Event Listeners for Buttons
+btnEn.addEventListener('click', () => setLanguage('en'));
+btnAm.addEventListener('click', () => setLanguage('am'));
 
 // ==================== NAVIGATION CAMERA ICON ====================
 const sections = document.querySelectorAll('.section, .fleur-section');
@@ -32,7 +35,6 @@ const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Highlight camera icon when any section is visible
             navIcon.classList.add('active');
         }
     });
