@@ -1,10 +1,9 @@
-// ==================== LANGUAGE SWITCHER LOGIC ====================
+// ==================== LANGUAGE SWITCHER ====================
 const btnEn = document.getElementById('btn-en');
 const btnAm = document.getElementById('btn-am');
 const translatableElements = document.querySelectorAll('[data-en]');
 
 function setLanguage(lang) {
-    // Update button styles
     if (lang === 'en') {
         btnEn.classList.add('active');
         btnAm.classList.remove('active');
@@ -13,25 +12,44 @@ function setLanguage(lang) {
         btnEn.classList.remove('active');
     }
 
-    // Update text content
     translatableElements.forEach(el => {
         const newText = el.getAttribute(`data-${lang}`);
-        if (newText) {
-            el.textContent = newText;
-        }
+        if (newText) el.textContent = newText;
     });
 }
 
-// Event Listeners for Buttons
 btnEn.addEventListener('click', () => setLanguage('en'));
 btnAm.addEventListener('click', () => setLanguage('am'));
 
-// ==================== NAVIGATION CAMERA ICON ====================
-const sections = document.querySelectorAll('.section, .fleur-section');
+// ==================== CHAT TOGGLE ====================
+const chatToggle = document.getElementById('chatToggle');
+const contactCard = document.getElementById('contactCard');
+
+chatToggle.addEventListener('click', () => {
+    contactCard.classList.toggle('open');
+    const icon = chatToggle.querySelector('i');
+    if (contactCard.classList.contains('open')) {
+        icon.classList.remove('fa-comment-dots');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-comment-dots');
+    }
+});
+
+document.addEventListener('click', (e) => {
+    if (!contactCard.contains(e.target) && !chatToggle.contains(e.target)) {
+        contactCard.classList.remove('open');
+        chatToggle.querySelector('i').classList.remove('fa-times');
+        chatToggle.querySelector('i').classList.add('fa-comment-dots');
+    }
+});
+
+// ==================== NAVIGATION ACTIVE STATE ====================
+const sections = document.querySelectorAll('section');
 const navIcon = document.querySelector('.nav-camera-icon');
 
-const observerOptions = { root: null, rootMargin: '0px', threshold: 0.5 };
-
+const observerOptions = { root: null, rootMargin: '-50% 0px', threshold: 0 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -42,7 +60,7 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-// Smooth scroll for "Services" link
+// ==================== SMOOTH SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -53,5 +71,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-console.log('✨ Angelina Afyan Portfolio loaded successfully!');
