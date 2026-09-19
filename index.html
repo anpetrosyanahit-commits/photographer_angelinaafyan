@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angelina Afyan — Photography Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -25,15 +23,15 @@
         
         <!-- Center: Only Services Link -->
         <div class="top-bar-center">
-            <a href="#services" class="nav-link">SERVICES</a>
+            <a href="#services" class="nav-link" data-en="SERVICES" data-am="ԾԱՌԱՅՈՒԹՅՈՒՆՆՐ">SERVICES</a>
         </div>
 
         <!-- Right: Language Switcher -->
         <div class="top-bar-right">
             <div class="lang-switch">
-                <span class="lang-opt active" data-lang="en">EN</span>
+                <span class="lang-opt active" id="btn-en">EN</span>
                 <span class="separator">|</span>
-                <span class="lang-opt" data-lang="am">AM</span>
+                <span class="lang-opt" id="btn-am">AM</span>
             </div>
         </div>
     </header>
@@ -43,7 +41,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">ANGELINA<br>AFYAN</h1>
-            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ՊԱՀԵՐ">CAPTURING SOULFUL MOMENTS</p>
+            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ԱՀԵՐ">CAPTURING SOULFUL MOMENTS</p>
             <a href="#services" class="hero-cta" data-en="View Prices →" data-am="Տեսնել գները →">View Prices →</a>
         </div>
         <div class="hero-image">
@@ -58,8 +56,9 @@
                 <span class="fleur-subtitle" data-en="EST. 2024" data-am="Հիմնադրված 2024">EST. 2024</span>
                 <h2 class="fleur-title">Fleur<br>Fanée</h2>
                 <div class="fleur-divider"></div>
-                <p class="fleur-desc" data-en="Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever." 
-                   data-am="Պահի անցողիկ գեղեցկությունը։ Ինչպես առամած ծաղիկը, այնպես էլ անհետացող պահերն ունեն իրենց յուրահատուկ էլեգանտությունը։">
+                <p class="fleur-desc" 
+                   data-en="Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever." 
+                   data-am="ահի անցողիկ գեղեցկությունը։ Ինչպես առամած ծաղիկը, այնպես էլ անհետացող պահերն ունեն րենց յուրահատուկ էլեգանտությունը։">
                    Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever.
                 </p>
             </div>
@@ -82,8 +81,8 @@
     <section id="services" class="section services-section">
         <div class="section-container">
             <div class="services-header">
-                <span class="section-subheading" data-en="INVESTMENT" data-am="ԳՆԱՑՈՒՅ">INVESTMENT</span>
-                <h2 class="section-heading" data-en="Service & Pricing" data-am="Ծառայություններ և Գներ">Service & Pricing</h2>
+                <span class="section-subheading" data-en="INVESTMENT" data-am="ԳՆԱՑՈՒՅՑ">INVESTMENT</span>
+                <h2 class="section-heading" data-en="Service & Pricing" data-am="առայություններ և Գներ">Service & Pricing</h2>
             </div>
 
             <div class="price-list-grid">
@@ -129,16 +128,16 @@
 
                 <!-- Love Story Column -->
                 <div class="price-category">
-                    <h3 class="category-title" data-en="Love Story" data-am="իրո Պատմություն">Love Story</h3>
+                    <h3 class="category-title" data-en="Love Story" data-am="Սիրո Պատմություն">Love Story</h3>
                     <div class="price-item highlight-item">
                         <div class="price-head">
-                            <h4 data-en="Couple Session" data-am="Զույգերի ոտոշարք">Couple Session</h4>
+                            <h4 data-en="Couple Session" data-am="Զույգերի Ֆոտոշարք">Couple Session</h4>
                             <span class="price-tag">25 000 AMD</span>
                         </div>
                         <ul class="price-details">
-                            <li data-en="Couple’s photoshoot in 1 location" data-am="ույգերի ֆոտոշարք 1 վայրում">Couple’s photoshoot in 1 location</li>
+                            <li data-en="Couple’s photoshoot in 1 location" data-am="Զույգերի ֆոտոշարք 1 վայրում">Couple’s photoshoot in 1 location</li>
                             <li data-en="Duration — 1 hour" data-am="Տևողությունը՝ 1 ժամ">Duration — 1 hour</li>
-                            <li data-en="Up to 80 edited photos" data-am="Մինչև 80 մբագրված լուսանկար">Up to 80 edited photos (color correction)</li>
+                            <li data-en="Up to 80 edited photos" data-am="Մինչև 80 խմբագրված լուսանկար">Up to 80 edited photos (color correction)</li>
                         </ul>
                     </div>
                 </div>
@@ -148,7 +147,7 @@
                     <h3 class="category-title" data-en="Personal" data-am="Անհատական">Personal</h3>
                     <div class="price-item">
                         <div class="price-head">
-                            <h4 data-en="Solo Session" data-am="Անհատական Ֆոտոշարք">Solo Session</h4>
+                            <h4 data-en="Solo Session" data-am="Անհատական ոտոշարք">Solo Session</h4>
                             <span class="price-tag">15 000 AMD</span>
                         </div>
                         <ul class="price-details">
@@ -168,7 +167,7 @@
     <div class="floating-contact-card">
         <div class="contact-avatar">A</div>
         <h3 class="contact-name">Angelina Afyan</h3>
-        <p class="contact-role">Photographer</p>
+        <p class="contact-role" data-en="Photographer" data-am="Լուսանկարիչ">Photographer</p>
         <a href="tel:+37495515540" class="contact-phone">+374 95 51 55 40</a>
         
         <div class="contact-buttons">
