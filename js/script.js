@@ -45,6 +45,48 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// ==================== PORTFOLIO SPOTLIGHT INTERACTION ====================
+const thumbs = document.querySelectorAll('.thumb-item');
+const spotlightImg = document.getElementById('spotlightImg');
+const spotlightTitle = document.getElementById('spotlightTitle');
+const spotlightMeta = document.getElementById('spotlightMeta');
+const spotlightFrame = document.getElementById('spotlightFrame');
+const heroFrame = document.getElementById('heroFrame');
+
+thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+        // Remove active from all
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+
+        // Trigger sprocket animation
+        spotlightFrame.classList.add('advance');
+        if (heroFrame) heroFrame.classList.add('advance');
+        
+        setTimeout(() => {
+            spotlightFrame.classList.remove('advance');
+            if (heroFrame) heroFrame.classList.remove('advance');
+        }, 400);
+
+        // Fade out current image
+        spotlightImg.style.opacity = '0';
+        spotlightImg.classList.remove('loaded');
+
+        // Swap content after fade
+        setTimeout(() => {
+            spotlightImg.src = thumb.dataset.src;
+            spotlightTitle.textContent = thumb.dataset.title;
+            spotlightMeta.textContent = thumb.dataset.meta;
+            
+            // Fade in new image
+            spotlightImg.onload = () => {
+                spotlightImg.style.opacity = '1';
+                setTimeout(() => spotlightImg.classList.add('loaded'), 50);
+            };
+        }, 300);
+    });
+});
+
 // ==================== NAVIGATION ACTIVE STATE ====================
 const sections = document.querySelectorAll('section');
 const navIcon = document.querySelector('.nav-camera-icon');
