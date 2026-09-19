@@ -26,6 +26,7 @@ a { text-decoration: none; color: inherit; }
     padding: 20px 50px; z-index: 999;
     background: rgba(245, 241, 235, 0.95); backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--cream-dark);
+    transition: padding 0.3s ease;
 }
 .top-bar-left .logo-text {
     font-family: var(--font-heading); font-weight: 700; font-size: 1.3rem; letter-spacing: 4px;
@@ -90,7 +91,7 @@ a { text-decoration: none; color: inherit; }
 }
 .hero-cta:hover { background: var(--sage); border-color: var(--sage); transform: translateY(-2px); }
 
-/* ==================== PORTFOLIO: PHOTO STRIP FRAME ==================== */
+/* ==================== PORTFOLIO: AUTO SCROLL STRIP ==================== */
 .portfolio-section {
     background-color: var(--charcoal); padding: 100px 0; 
     min-height: auto; scroll-snap-align: start; overflow: hidden;
@@ -100,53 +101,61 @@ a { text-decoration: none; color: inherit; }
 .portfolio-header .section-subheading { color: var(--sage-light); }
 .portfolio-header h2 { color: var(--white); }
 
-/* The Single Photo Strip Container */
-.strip-container {
-    position: relative; width: 95%; max-width: 1100px; 
-    background: #000; padding: 15px 0; 
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    display: flex; justify-content: center;
+.strip-container-auto {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    background: #000;
+    border-top: 10px solid #111;
+    border-bottom: 10px solid #111;
 }
-/* Sprocket Holes Top/Bottom */
-.strip-container::before, .strip-container::after {
+
+/* Sprocket Holes Top/Bottom for Strip */
+.strip-container-auto::before, .strip-container-auto::after {
     content: ''; position: absolute; left: 0; right: 0; height: 30px; z-index: 2;
     background-image: radial-gradient(circle, #fff 8px, transparent 9px);
     background-size: 40px 30px; background-position: center;
     background-color: #111;
 }
-.strip-container::before { top: 0; border-bottom: 1px solid #333; }
-.strip-container::after { bottom: 0; border-top: 1px solid #333; }
+.strip-container-auto::before { top: 0; border-bottom: 1px solid #333; }
+.strip-container-auto::after { bottom: 0; border-top: 1px solid #333; }
 
-/* Inner Image Area */
-.strip-viewer {
-    width: 100%; height: 500px; overflow: hidden; position: relative;
-    background: #1a1a1a; border-left: 10px solid #000; border-right: 10px solid #000;
+.strip-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollStrip 35s linear infinite; /* Moderate speed */
 }
-.strip-img {
-    width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(100%) contrast(1.1); transition: all 0.6s ease;
-    opacity: 0.8;
-}
-.strip-img.active { filter: grayscale(0%) contrast(1); opacity: 1; }
 
-/* Navigation Arrows for Strip */
-.strip-nav {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 40px; height: 40px; background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.3); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: white; cursor: pointer; z-index: 10; transition: 0.3s;
+.strip-item {
+    width: 400px;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
 }
-.strip-nav:hover { background: var(--sage); border-color: var(--sage); }
-.strip-prev { left: -60px; }
-.strip-next { right: -60px; }
 
-.strip-info {
-    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-    background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 30px;
-    color: white; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
-    backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);
-    white-space: nowrap;
+.strip-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.strip-item:hover img {
+    filter: grayscale(0%);
+}
+
+@keyframes scrollStrip {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Moves half way (the length of original set) then resets */
+}
+
+/* Pause animation on hover so users can look at a photo */
+.strip-container-auto:hover .strip-track {
+    animation-play-state: paused;
 }
 
 /* ==================== ABOUT ME SECTION ==================== */
@@ -177,7 +186,6 @@ a { text-decoration: none; color: inherit; }
     background: var(--cream); padding: 120px 5%; 
     scroll-snap-align: start; position: relative;
 }
-/* Decorative Background Element */
 .services-section::before {
     content: ''; position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%); width: 600px; height: 600px;
@@ -189,43 +197,31 @@ a { text-decoration: none; color: inherit; }
 .services-icon-title { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 10px; }
 .services-icon-title i { font-size: 2rem; color: var(--charcoal); }
 
-/* Ticket Grid Layout */
 .ticket-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
 }
 
-/* Individual Ticket Card */
 .service-ticket {
     background: var(--white); position: relative;
     padding: 40px 30px; border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Dashed Cut Line Effect */
-    mask-image: radial-gradient(circle at 0 50%, transparent 15px, black 16px),
-                radial-gradient(circle at 100% 50%, transparent 15px, black 16px);
-    mask-composite: add; /* Fallback logic handled by pseudo elements usually, but simple radius works for modern browsers */
-    -webkit-mask-image: radial-gradient(circle at 0 50%, transparent 15px, black 16px),
-                        radial-gradient(circle at 100% 50%, transparent 15px, black 16px);
-    -webkit-mask-composite: source-over; 
-    /* Note: For perfect cutouts on sides, we use pseudo elements below */
 }
 
 /* Side Cutouts (The "Ticket" Notches) */
 .service-ticket::before, .service-ticket::after {
     content: ''; position: absolute; top: 50%; width: 30px; height: 30px;
-    background: var(--cream); /* Matches section bg */
+    background: var(--cream);
     border-radius: 50%; transform: translateY(-50%); z-index: 2;
 }
 .service-ticket::before { left: -15px; }
 .service-ticket::after { right: -15px; }
 
-/* Dashed Line Separator inside ticket */
 .ticket-divider {
     width: 100%; height: 1px; border-top: 2px dashed var(--light-gray);
     margin: 25px 0; position: relative;
 }
-/* Circle in middle of dashed line */
 .ticket-divider::after {
     content: '✂'; position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%); background: var(--white);
@@ -297,27 +293,148 @@ a { text-decoration: none; color: inherit; }
 .btn-contact.insta:hover { background: #E1306C; color: white; border-color: #E1306C; }
 .btn-contact.whatsapp:hover { background: #25D366; color: white; border-color: #25D366; }
 
-/* ==================== RESPONSIVE ==================== */
+/* ==================== BOOKING MODAL ==================== */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); z-index: 2000;
+    display: none; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+}
+.modal-overlay.active { display: flex; opacity: 1; }
+
+.modal-content {
+    background: var(--cream); padding: 40px; border-radius: 8px;
+    width: 90%; max-width: 500px; position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 2rem; cursor: pointer; color: var(--charcoal);
+}
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 8px; color: var(--warm-gray); }
+.form-group input {
+    width: 100%; padding: 12px; border: 1px solid var(--light-gray);
+    background: var(--white); font-family: var(--font-body);
+    border-radius: 4px; outline: none;
+}
+.form-group input:focus { border-color: var(--sage); }
+
+.loading-spinner {
+    display: none; margin-left: 10px; font-size: 0.8rem; color: var(--sage);
+}
+
+/* ==================== MOBILE OPTIMIZATION ==================== */
 @media (max-width: 1024px) {
     .about-container { flex-direction: column; text-align: center; gap: 40px; }
     .film-strip-frame { height: 70vh; width: 95%; }
-    .strip-viewer { height: 400px; }
-    .strip-prev { left: 10px; }
-    .strip-next { right: 10px; }
 }
+
 @media (max-width: 768px) {
-    .top-bar { padding: 15px 20px; }
-    .section-heading { font-size: 2.2rem; }
-    .floating-contact-card { width: calc(100% - 60px); right: 30px; }
+    /* 1. Top Bar Adjustments */
+    .top-bar { 
+        padding: 15px 20px; 
+        flex-wrap: wrap; 
+        gap: 10px;
+    }
+    .top-bar-center { 
+        order: 3; 
+        width: 100%; 
+        justify-content: center; 
+        margin-top: 10px; 
+        gap: 15px; 
+    }
+    .top-bar-center .nav-link { font-size: 0.7rem; letter-spacing: 2px; }
+
+    /* 2. Typography Scaling */
+    .section-heading { font-size: 2.2rem; margin-bottom: 20px; }
+    .hero-subtitle { font-size: 0.75rem; letter-spacing: 4px; }
+    .hero-cta { padding: 12px 25px; font-size: 0.75rem; }
+
+    /* 3. HERO SECTION - Remove Film Frame for Mobile */
+    .hero-section { 
+        padding: 80px 0 40px 0; /* Account for fixed top bar */
+        min-height: auto; 
+        height: auto;
+    }
+    .film-strip-frame { 
+        height: 60vh; 
+        width: 95%; 
+        border-radius: 8px;
+    }
+    /* HIDE sprocket holes on mobile to maximize image area */
+    .film-strip-frame::before, 
+    .film-strip-frame::after { display: none; }
+    .hero-image-wrapper { 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+    }
+    .hero-content { 
+        left: 5%; 
+        bottom: 5%; 
+        max-width: 90%; 
+    }
+
+    /* 4. PORTFOLIO STRIP - Switch to Vertical Stack on Mobile */
+    .portfolio-section { padding: 60px 0; }
     
-    .hero-section { padding: 20px 10px; }
-    .film-strip-frame { height: 60vh; }
-    .film-strip-frame::before, .film-strip-frame::after { width: 30px; background-size: 30px 40px; }
-    .hero-image-wrapper { width: calc(100% - 60px); }
-    .hero-content { left: 5%; bottom: 5%; max-width: 90%; }
+    /* Hide the horizontal animation container entirely */
+    .strip-container-auto { display: none; }
     
-    .strip-container { width: 100%; border-radius: 0; }
-    .strip-viewer { height: 300px; }
+    /* Create a clean vertical grid for mobile portfolio */
+    .portfolio-header { margin-bottom: 30px; padding: 0 20px; }
     
-    .ticket-grid { grid-template-columns: 1fr; max-width: 400px; }
+    /* We inject a mobile-only grid via CSS using the existing strip items */
+    .strip-track {
+        display: grid !important;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 20px;
+        animation: none !important; /* Stop the horizontal scroll */
+        transform: none !important;
+    }
+    
+    .strip-item {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 3/4; /* Perfect portrait ratio for phones */
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .strip-item img {
+        filter: grayscale(0%) !important; /* Show color by default on mobile */
+        object-fit: cover;
+    }
+    
+    /* Hide duplicate items on mobile to prevent double content */
+    .strip-item:nth-child(n+14) { display: none; }
+
+    /* 5. ABOUT SECTION */
+    .about-section { padding: 60px 20px; min-height: auto; }
+    .about-container { flex-direction: column; gap: 30px; }
+    .about-text { text-align: center; }
+    .about-pc-img { max-width: 350px; margin: 0 auto; }
+
+    /* 6. SERVICES TICKETS */
+    .services-section { padding: 60px 20px; }
+    .ticket-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .service-ticket { padding: 30px 20px; }
+    /* Reduce notch size on mobile */
+    .service-ticket::before, .service-ticket::after { width: 20px; height: 20px; }
+
+    /* 7. FLOATING ELEMENTS */
+    .chat-toggle-btn { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.2rem; }
+    .floating-contact-card { 
+        width: calc(100% - 40px); 
+        right: 20px; 
+        bottom: 80px; 
+        padding: 20px; 
+    }
 }
