@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angelina Afyan — Photography Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Navigation Dots -->
+    <!-- Left Navigation: Camera Icon -->
     <nav class="side-nav">
-        <a href="#hero" class="nav-dot active"></a>
-        <a href="#fleur" class="nav-dot"></a>
-        <a href="#about" class="nav-dot"></a>
-        <a href="#portfolio" class="nav-dot"></a>
-        <a href="#services" class="nav-dot"></a>
-        <a href="#contact" class="nav-dot"></a>
+        <a href="#hero" class="nav-camera-icon active"><i class="fas fa-camera-retro"></i></a>
     </nav>
 
     <!-- Top Bar -->
@@ -25,15 +22,19 @@
         <div class="top-bar-left">
             <span class="logo-text">ANGELINA AFYAN</span>
         </div>
+        
+        <!-- Center: Only Services Link -->
         <div class="top-bar-center">
-            <span>PORTRAIT</span>
-            <span class="separator">|</span>
-            <span>FAMILY</span>
-            <span class="separator">|</span>
-            <span>LOVE STORY</span>
+            <a href="#services" class="nav-link">SERVICES</a>
         </div>
+
+        <!-- Right: Language Switcher -->
         <div class="top-bar-right">
-            <span>2024</span>
+            <div class="lang-switch">
+                <span class="lang-opt active" data-lang="en">EN</span>
+                <span class="separator">|</span>
+                <span class="lang-opt" data-lang="am">AM</span>
+            </div>
         </div>
     </header>
 
@@ -42,171 +43,143 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">ANGELINA<br>AFYAN</h1>
-            <p class="hero-subtitle">CAPTURING SOULFUL MOMENTS</p>
-            <a href="#portfolio" class="hero-cta">View Portfolio →</a>
+            <p class="hero-subtitle" data-en="CAPTURING SOULFUL MOMENTS" data-am="ՀՈԳԵՎՈՐ ՊԱՀԵՐ">CAPTURING SOULFUL MOMENTS</p>
+            <a href="#services" class="hero-cta" data-en="View Prices →" data-am="Տեսնել գները →">View Prices →</a>
         </div>
         <div class="hero-image">
-            <!-- Placeholder Image -->
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1200&q=80" alt="Hero Portrait">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1600&q=80" alt="Hero Portrait">
         </div>
     </section>
 
     <!-- ==================== FLEUR FANEE ROLLING SECTION ==================== -->
     <section id="fleur" class="fleur-section">
         <div class="fleur-container">
-            
-            <!-- Left Side: Text -->
             <div class="fleur-content">
-                <span class="fleur-subtitle">EST. 2024</span>
+                <span class="fleur-subtitle" data-en="EST. 2024" data-am="Հիմնադրված 2024">EST. 2024</span>
                 <h2 class="fleur-title">Fleur<br>Fanée</h2>
                 <div class="fleur-divider"></div>
-                <p class="fleur-desc">
-                    Capturing the ephemeral beauty of the moment. 
-                    Like a wilted flower, there is a unique, melancholic elegance 
-                    in things that do not last forever.
+                <p class="fleur-desc" data-en="Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever." 
+                   data-am="Պահի անցողիկ գեղեցկությունը։ Ինչպես առամած ծաղիկը, այնպես էլ անհետացող պահերն ունեն իրենց յուրահատուկ էլեգանտությունը։">
+                   Capturing the ephemeral beauty of the moment. Like a wilted flower, there is a unique elegance in things that do not last forever.
                 </p>
-                <a href="#portfolio" class="fleur-btn">View Gallery</a>
             </div>
 
-            <!-- Right Side: Rolling Photos -->
             <div class="fleur-visuals">
                 <div class="film-strip">
-                    <!-- Placeholder Images for Animation -->
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo 1"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo 2"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Photo 3"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80" alt="Photo 4"></div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo 1"></div>
-                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo 2"></div>
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo"></div>
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo"></div>
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Photo"></div>
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80" alt="Photo"></div>
+                    <!-- Duplicates for loop -->
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Photo"></div>
+                    <div class="photo-card"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80" alt="Photo"></div>
                 </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ==================== ABOUT / CONCEPT SECTION ==================== -->
-    <section id="about" class="section concept-section">
-        <div class="section-container split-layout reverse">
-            <div class="split-left">
-                <span class="section-subheading">MY PHILOSOPHY</span>
-                <h2 class="section-heading">Every Photo Tells<br>A Unique Story</h2>
-                <div class="concept-box">
-                    <h3>About My Approach</h3>
-                    <p>I believe photography is more than just clicking a shutter. It's about capturing the raw emotion, the fleeting glances, and the authentic connections that make every moment unforgettable.</p>
-                    <span class="concept-date">Based in Yerevan, Armenia</span>
-                </div>
-            </div>
-            <div class="split-right">
-                <!-- Placeholder Image -->
-                <img src="https://images.unsplash.com/photo-1554048612-387768052bf7?w=800&q=80" alt="About Angelina">
             </div>
         </div>
     </section>
 
-    <!-- ==================== PORTFOLIO GRID ==================== -->
-    <section id="portfolio" class="section portfolio-section">
+    <!-- ==================== SERVICES / PRICE LIST SECTION ==================== -->
+    <section id="services" class="section services-section">
         <div class="section-container">
-            <div style="text-align: center; margin-bottom: 60px;">
-                <span class="section-subheading">SELECTED WORKS</span>
-                <h2 class="section-heading">Featured Collections</h2>
+            <div class="services-header">
+                <span class="section-subheading" data-en="INVESTMENT" data-am="ԳՆԱՑՈՒՅ">INVESTMENT</span>
+                <h2 class="section-heading" data-en="Service & Pricing" data-am="Ծառայություններ և Գներ">Service & Pricing</h2>
             </div>
-            
-            <div class="portfolio-grid">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Portrait">
-                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=600&q=80" alt="Family">
-                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&q=80" alt="Love Story">
-                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80" alt="Newborn">
-                <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Maternity">
-                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80" alt="Lifestyle">
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="#" class="btn-more">See All Projects →</a>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==================== SERVICES SECTION ==================== -->
-    <section id="services" class="section service-section">
-        <div class="section-container split-layout">
-            <div class="split-left">
-                <span class="section-subheading">WHAT I OFFER</span>
-                <h2 class="section-heading">My Services</h2>
-                <p class="section-text">From intimate family gatherings to romantic love stories, I provide tailored photography experiences.</p>
+            <div class="price-list-grid">
                 
-                <div class="service-list-custom">
-                    <div class="service-item-row">
-                        <span class="service-num">01</span>
-                        <div>
-                            <h4>Portrait Sessions</h4>
-                            <p>Individual & Creative Portraits</p>
+                <!-- Wedding Column -->
+                <div class="price-category">
+                    <h3 class="category-title" data-en="Wedding" data-am="Հարսանիք">Wedding</h3>
+                    
+                    <div class="price-item">
+                        <div class="price-head">
+                            <h4 data-en="Package 1" data-am="Փաթեթ 1">Package 1</h4>
+                            <span class="price-tag">70 000 AMD</span>
                         </div>
+                        <ul class="price-details">
+                            <li data-en="All day shooting (till 23:00)" data-am="Ամբողջ օրվա նկարահանում (մինչև 23:00)">All day shooting (till 23:00)</li>
+                            <li data-en="600-800 edited photos (color correction)" data-am="600-800 խմբագրված լուսանկար">600-800 edited photos (color correction)</li>
+                            <li data-en="20-30 edited photos that day" data-am="20-30 խմբագրված լուսանկար նույն օրը">20-30 edited photos that day</li>
+                        </ul>
                     </div>
-                    <div class="service-item-row">
-                        <span class="service-num">02</span>
-                        <div>
-                            <h4>Family Stories</h4>
-                            <p>Candid Family & Lifestyle</p>
+
+                    <div class="price-item">
+                        <div class="price-head">
+                            <h4 data-en="Package 2" data-am="Փաթեթ 2">Package 2</h4>
+                            <span class="price-tag">50 000 AMD</span>
                         </div>
+                        <ul class="price-details">
+                            <li data-en="Bride’s morning, ceremony & photoshoot (till 18:00)" data-am="Հարսնացուի առավոտ, արարողություն և ֆոտոշարք (մինչև 18:00)">Bride’s morning, ceremony & photoshoot (till 18:00)</li>
+                            <li data-en="300-400 edited photos" data-am="300-400 խմբագրված լուսանկար">300-400 edited photos</li>
+                        </ul>
                     </div>
-                    <div class="service-item-row">
-                        <span class="service-num">03</span>
-                        <div>
-                            <h4>Love Stories</h4>
-                            <p>Engagement & Couple Sessions</p>
+
+                    <div class="price-item">
+                        <div class="price-head">
+                            <h4 data-en="Package 3" data-am="Փաթեթ 3">Package 3</h4>
+                            <span class="price-tag">30 000 AMD</span>
                         </div>
+                        <ul class="price-details">
+                            <li data-en="Wedding ceremony and photoshoot" data-am="Հարսանեկան արարողություն և ֆոտոշարք">Wedding ceremony and photoshoot</li>
+                            <li data-en="150-200 edited photos" data-am="150-200 խմբագրված լուսանկար">150-200 edited photos</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-            <div class="split-right">
-                <div class="service-images">
-                    <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&q=80" alt="Service Main">
-                    <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=600&q=80" alt="Detail 1">
-                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Detail 2">
+
+                <!-- Love Story Column -->
+                <div class="price-category">
+                    <h3 class="category-title" data-en="Love Story" data-am="իրո Պատմություն">Love Story</h3>
+                    <div class="price-item highlight-item">
+                        <div class="price-head">
+                            <h4 data-en="Couple Session" data-am="Զույգերի ոտոշարք">Couple Session</h4>
+                            <span class="price-tag">25 000 AMD</span>
+                        </div>
+                        <ul class="price-details">
+                            <li data-en="Couple’s photoshoot in 1 location" data-am="ույգերի ֆոտոշարք 1 վայրում">Couple’s photoshoot in 1 location</li>
+                            <li data-en="Duration — 1 hour" data-am="Տևողությունը՝ 1 ժամ">Duration — 1 hour</li>
+                            <li data-en="Up to 80 edited photos" data-am="Մինչև 80 մբագրված լուսանկար">Up to 80 edited photos (color correction)</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <!-- Personal Column -->
+                <div class="price-category">
+                    <h3 class="category-title" data-en="Personal" data-am="Անհատական">Personal</h3>
+                    <div class="price-item">
+                        <div class="price-head">
+                            <h4 data-en="Solo Session" data-am="Անհատական Ֆոտոշարք">Solo Session</h4>
+                            <span class="price-tag">15 000 AMD</span>
+                        </div>
+                        <ul class="price-details">
+                            <li data-en="Photoshoot in 1 location" data-am="Ֆոտոշարք 1 վայրում">Photoshoot in 1 location</li>
+                            <li data-en="Duration — 1 hour" data-am="Տևողությունը՝ 1 ժամ">Duration — 1 hour</li>
+                            <li data-en="Up to 30 edited photos" data-am="Մինչև 30 խմբագրված լուսանկար">Up to 30 edited photos</li>
+                            <li class="extra-note" data-en="In photostudio: +15 000 AMD" data-am="Ֆոտոստուդիայում +15 000 AMD">In photostudio: +15 000 AMD</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ==================== CONTACT SECTION ==================== -->
-    <section id="contact" class="section contact-section">
-        <div class="section-container split-layout">
-            <div class="split-left">
-                <span class="section-subheading">GET IN TOUCH</span>
-                <h2 class="section-heading">Let's Create<br>Magic Together</h2>
-                <p class="section-text">Ready to book your session? I'd love to hear from you.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h4>Email</h4>
-                        <p>hello@angelinaafyan.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Instagram</h4>
-                        <p>@angelina.afyan.photo</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Location</h4>
-                        <p>Yerevan, Armenia</p>
-                    </div>
-                </div>
-            </div>
-            <div class="split-right">
-                <div class="form-mockup">
-                    <input type="text" placeholder="Your Name" disabled>
-                    <input type="email" placeholder="Your Email" disabled>
-                    <textarea placeholder="Tell me about your vision..." disabled></textarea>
-                    <button class="btn-more" disabled style="width: 100%; opacity: 0.6; cursor: not-allowed;">Send Message</button>
-                </div>
-            </div>
+    <!-- ==================== FLOATING CONTACT CARD (Bottom Right) ==================== -->
+    <div class="floating-contact-card">
+        <div class="contact-avatar">A</div>
+        <h3 class="contact-name">Angelina Afyan</h3>
+        <p class="contact-role">Photographer</p>
+        <a href="tel:+37495515540" class="contact-phone">+374 95 51 55 40</a>
+        
+        <div class="contact-buttons">
+            <a href="https://instagram.com/angelinaafyan_photography?stkn=MTJuc3luN3JvenZ2YQ==" target="_blank" class="btn-contact insta">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/37495515540" target="_blank" class="btn-contact whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Angelina Afyan Photography. All rights reserved.</p>
-    </footer>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
